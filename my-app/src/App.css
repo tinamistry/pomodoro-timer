@@ -1,38 +1,62 @@
-.App {
+
+body{
+  background-color: #724e2c;
+  color: #eee;
+}
+main{
+  padding-top: 50px;
+  max-width: 340px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+  background-color: transparent;
+  color: rgba(255,255,255,0.8);
+  border:0;
+  display: inline-block;
+  width: 100px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button.with-text{
+  width: auto;
+  background-color:rgba(255,255,255,0.1);
+  border-radius:10px;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  line-height: 36px;
+}
+button.with-text svg{
+  width: 36px;
+  float:left;
+  margin-right: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+label{
+  display:block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-transform: capitalize;
 }
 
-.App-link {
-  color: #61dafb;
+.slider{
+  height: 40px;
+  border: 2px solid var(--red);
+  border-radius: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.thumb{
+  background-color: var(--red);
+  cursor:pointer;
+  width:40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.slider.green{
+  border: 2px solid var(--green);
+}
+.slider.green .thumb{
+  background-color: var(--green);
 }
