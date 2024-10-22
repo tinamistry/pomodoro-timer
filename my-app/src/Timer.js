@@ -5,6 +5,7 @@ import PauseButton from "./PauseButton";
 import SettingsButton from "./SettingsButton";
 import {useContext, useState, useEffect, useRef} from "react";
 import SettingsContext from "./SettingsContext";
+import SpotifyLoginButton from './SpotifyLoginButton';
 
 const red = '#271300';
 const green = '#f9f8eb';
@@ -82,6 +83,7 @@ function Timer() {
       <div style={{marginTop:'20px'}}>
         <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
       </div>
+      <SpotifyLoginButton/>
     </div>
   );
 }
