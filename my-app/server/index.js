@@ -22,6 +22,7 @@ app.get('/auth/login', (req, res) => {
   url += '&scope=' + encodeURIComponent(scope)
   url += '&redirect_uri=' + encodeURIComponent(spotify_redirect_uri)
 
+
   res.redirect(url);
  
 });

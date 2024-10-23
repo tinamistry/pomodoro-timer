@@ -2,15 +2,16 @@
 import './App.css';
 import Settings from './Settings';
 import Timer from './Timer';
-import { useState } from 'react';
+import { useState} from 'react';
 import SettingsContext from './SettingsContext';
-
+import { useEffect } from 'react';
 
 function App() {
 
   const [showSettings, setShowSettings] = useState(false);
   const[workMinutes, setWorkMinutes] = useState(45);
   const[breakMinutes, setBreakMinutes] = useState(15);
+
 
   return (
     <main>
