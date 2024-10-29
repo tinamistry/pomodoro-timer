@@ -6,6 +6,7 @@ import SettingsButton from "./SettingsButton";
 import {useContext, useState, useEffect, useRef} from "react";
 import SettingsContext from "./SettingsContext";
 import SpotifyLoginButton from './SpotifyLoginButton';
+import GetPlaylist from './GetPlaylist';
 
 const red = '#271300';
 const green = '#f9f8eb';
@@ -16,6 +17,7 @@ function Timer() {
   const [isPaused, setIsPaused] = useState(true);
   const [mode, setMode] = useState('work'); // work/break/null
   const [secondsLeft, setSecondsLeft] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
@@ -27,6 +29,10 @@ function Timer() {
   }
 
   useEffect(() => {
+
+    if(localStorage.getItem("accessToken")){
+      setIsLoggedIn(true)
+    }
 
     function switchMode() {
       const nextMode = modeRef.current === 'work' ? 'break' : 'work';
@@ -83,7 +89,10 @@ function Timer() {
       <div style={{marginTop:'20px'}}>
         <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
       </div>
-      <SpotifyLoginButton/>
+      {isLoggedIn
+       ? <GetPlaylist/>
+       : <SpotifyLoginButton/>
+      }
     </div>
   );
 }
