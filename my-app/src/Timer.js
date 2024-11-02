@@ -72,28 +72,30 @@ function Timer() {
   if(seconds < 10) seconds = '0'+seconds;
 
   return (
-    <div>
-      <CircularProgressbar
-        value={percentage}
-        text={minutes + ':' + seconds}
-        styles={buildStyles({
-        textColor:'#fff',
-        pathColor:mode === 'work' ? red : green,
-        tailColor:'rgba(255,255,255,.2)',
-      })} />
-      <div style={{marginTop:'20px'}}>
+    <div className="timer-container">
+        <div className="timer">
+          <CircularProgressbar
+            value={percentage}
+            text={minutes + ':' + seconds}
+            styles={buildStyles({
+              textColor: '#fff',
+              pathColor: mode === 'work' ? red : green,
+              tailColor: 'rgba(255,255,255,.2)',
+            })}
+          />
+      <div style={{ marginTop: '20px' }}>
         {isPaused
           ? <PlayButton onClick={() => { setIsPaused(false); isPausedRef.current = false; }} />
           : <PauseButton onClick={() => { setIsPaused(true); isPausedRef.current = true; }} />}
       </div>
-      <div style={{marginTop:'20px'}}>
+      <div style={{ marginTop: '20px' }}>
         <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
       </div>
-      {isLoggedIn
-       ? <GetPlaylist/>
-       : <SpotifyLoginButton/>
-      }
     </div>
+    <div className="spotify">
+      {isLoggedIn ? <GetPlaylist /> : <SpotifyLoginButton />}
+    </div>
+  </div>
   );
 }
 

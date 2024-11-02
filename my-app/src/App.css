@@ -2,15 +2,38 @@
 body{
   background-color: #724e2c;
   color: #eee;
-}
-main{
-  padding-top: 50px;
-  max-width: 340px;
-  margin: 0 auto;
-  text-align: center;
+  border-style: dashed;
+  height: 100%; 
+  margin: 0;
+  padding: 0; 
 }
 
+
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+.timer{
+  display:flex;
+  border-style: dashed;
+  border-color: blue;
+}
+
+.spotify {
+  display: flex;
+  align-items: center;
+  border-style: dashed;
+  border-color: blue;
+}
+
+
 button{
+  display:flex;
   background-color: transparent;
   color: rgba(255,255,255,0.8);
   border:0;
@@ -60,3 +83,4 @@ label{
 .slider.green .thumb{
   background-color: var(--green);
 }
+

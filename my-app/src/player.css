@@ -1,0 +1,32 @@
+.getPlaylist{
+    
+    background-color: #121212;
+    margin: 100px;
+    border-radius: 10px;
+}
+
+.actionButtons{
+    display:flex;
+    justify-content: row;
+  
+    
+}
+
+.nextButton, .playPauseButton, .backButton{
+    width: 100%;
+    padding: 0px;
+  
+}
+
+.playPauseButton{
+    display:flex;
+   
+}
+
+.songInfo {
+   padding-left: 15px;
+   margin-top: -20px;
+
+    
+    
+}
