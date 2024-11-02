@@ -10,7 +10,13 @@ let spotify_client_id = process.env.SPOTIFY_CLIENT_ID;
 let spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 let spotify_redirect_uri = process.env.REDIRECT_URI;
 let spotify_auth_url = process.env.SPOTIFY_AUTHORIZE_ENDPOINT;
-let scope = 'user-read-playback-state';
+//let scope = 'user-read-playback-state';
+let scope = [
+  'user-read-playback-state',
+  'user-modify-playback-state',
+  'user-read-currently-playing',
+  'app-remote-control',
+].join(' ');
 
 var app = express();
 app.use(cors()); 
